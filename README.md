@@ -1,6 +1,6 @@
 # Emergency Live
 
-This is an official starter Turborepo.
+당신의 근처의 응급실을 찾아주는 서비스입니다.
 
 ## Using this example
 
