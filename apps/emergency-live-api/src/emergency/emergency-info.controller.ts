@@ -7,7 +7,7 @@ export const EmergencyInfoController = new Elysia({
   '/emergency-info',
   {
     detail: {
-      tags: ['emergency-info'],
+      tags: ['응급실 관련 정보'],
     },
   },
   app =>
@@ -75,45 +75,6 @@ export const EmergencyInfoController = new Elysia({
           detail: {
             summary: '응급의료기관 기본정보 조회',
             description: '응급의료기관 기본정보를 조회합니다.',
-          },
-        },
-      )
-
-      .get(
-        '/trauma-centers',
-        ({ emergencyInfoService }) => {
-          return 'getTraumaCenterListInfoInquire'
-        },
-        {
-          detail: {
-            summary: '외상센터 목록정보 조회',
-            description: '외상센터 목록정보를 조회합니다.',
-          },
-        },
-      )
-
-      .get(
-        '/trauma-centers/locations',
-        ({ emergencyInfoService }) => {
-          return 'getTraumaCenterLocationInfoInquire'
-        },
-        {
-          detail: {
-            summary: '외상센터 위치정보 조회',
-            description: '외상센터 위치정보를 조회합니다.',
-          },
-        },
-      )
-
-      .get(
-        '/trauma-centers/basic-info',
-        ({ emergencyInfoService }) => {
-          return 'getTraumaCenterBasicInfoInquire'
-        },
-        {
-          detail: {
-            summary: '외상센터 기본정보 조회',
-            description: '외상센터 기본정보를 조회합니다.',
           },
         },
       )

@@ -2,6 +2,7 @@ import { Elysia, t } from 'elysia'
 import { cors } from '@elysiajs/cors'
 import { swagger } from '@elysiajs/swagger'
 import { EmergencyInfoController } from './emergency/emergency-info.controller'
+import { TraumaCentersController } from './trauma-centers/trauma-centers.controller'
 
 export const app = new Elysia()
   .use(cors())
@@ -12,6 +13,7 @@ export const app = new Elysia()
   )
   .get('/health', () => 'ok')
   .use(EmergencyInfoController)
+  .use(TraumaCentersController)
   .listen(process.env.PORT || 8001)
 
 console.log(`
