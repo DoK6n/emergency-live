@@ -26,9 +26,6 @@ importers:
       '@elysiajs/cors':
         specifier: ^0.8.0
         version: 0.8.0(elysia@0.8.17)
-      '@elysiajs/eden':
-        specifier: ^0.8.1
-        version: 0.8.1(@sinclair/typebox@0.32.15)(elysia@0.8.17)
       '@elysiajs/swagger':
         specifier: ^0.8.5
         version: 0.8.5(elysia@0.8.17)
@@ -39,6 +36,9 @@ importers:
         specifier: latest
         version: 0.8.17(@sinclair/typebox@0.32.15)
     devDependencies:
+      '@elysiajs/eden':
+        specifier: ^0.8.1
+        version: 0.8.1(@sinclair/typebox@0.32.15)(elysia@0.8.17)
       '@types/node':
         specifier: ^20.10.6
         version: 20.11.25
@@ -450,7 +450,7 @@ packages:
       '@sinclair/typebox': 0.32.15
       elysia: 0.8.17(@sinclair/typebox@0.32.15)
       superjson: 2.2.1
-    dev: false
+    dev: true
 
   /@elysiajs/eden@0.8.1(elysia@0.8.17):
     resolution: {integrity: sha512-YzvcIANyzdxWqaXBYjVN/Y9hqaIDQwF3jc7rUMqVLVo+zOd3eTn8zruNEWcumA6n+rJujqqMYanrOD3pUolOtg==}
@@ -730,7 +730,6 @@ packages:
 
   /@sinclair/typebox@0.32.15:
     resolution: {integrity: sha512-5Lrwo7VOiWEBJBhHmqNmf3TPB9ll8gcEshvYJyAIJyCZ2PF48MFOtiDHJNj8+FsNcqImaQYmxVkKBCBlyAa/wg==}
-    dev: false
 
   /@swc/helpers@0.5.2:
     resolution: {integrity: sha512-E4KcWTpoLHqwPHLxidpOqQbcrZVgi0rsmmZXUle1jXmJfuIf/UWpczUJ7MZZ5tlxytgJXyp0w4PGkkeLiuIdZw==}
@@ -1628,7 +1627,6 @@ packages:
     engines: {node: '>=12.13'}
     dependencies:
       is-what: 4.1.16
-    dev: false
 
   /core-js-pure@3.36.0:
     resolution: {integrity: sha512-cN28qmhRNgbMZZMc/RFu5w8pK9VJzpb2rJVR/lHuZJKwmXnoWOpXmMkxqBB514igkp1Hu8WGROsiOAzUcKdHOQ==}
@@ -1820,7 +1818,6 @@ packages:
       fast-decode-uri-component: 1.0.1
       fast-querystring: 1.1.2
       memoirist: 0.1.10
-    dev: false
 
   /elysia@0.8.17(typescript@5.4.2):
     resolution: {integrity: sha512-hqKHKUxbvlDHnobudtna5nBoGiZ4oa0xdnhynLAJF3+6gTYHAcQ/8/IyxUx5Az5Uy0zTuNiv7m2bIFu7xeMiWg==}
@@ -3155,7 +3152,6 @@ packages:
   /is-what@4.1.16:
     resolution: {integrity: sha512-ZhMwEosbFJkA0YhFnNDgTM4ZxDRsS6HqTo7qsZM08fehyRYIYa0yHu5R6mgo1n/8MgaPBXiPimPD77baVFYg+A==}
     engines: {node: '>=12.13'}
-    dev: false
 
   /isarray@2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
@@ -4435,7 +4431,6 @@ packages:
     engines: {node: '>=16'}
     dependencies:
       copy-anything: 3.0.5
-    dev: false
 
   /supports-color@5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}

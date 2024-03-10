@@ -5,17 +5,17 @@
     ".": "./src/type.ts"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "test": "bun test --watch"
   },
   "dependencies": {
     "@elysiajs/cors": "^0.8.0",
-    "@elysiajs/eden": "^0.8.1",
     "@elysiajs/swagger": "^0.8.5",
     "@sinclair/typebox": "^0.32.15",
     "elysia": "latest"
   },
   "devDependencies": {
+    "@elysiajs/eden": "^0.8.1",
     "@types/node": "^20.10.6",
     "bun-types": "latest"
   },

@@ -14,7 +14,7 @@ async function Gradient({
   conic?: boolean
   className?: string
 }) {
-  const { data, status } = await api.message.get()
+  const { data, status } = await api['emergency-info']['available-beds'].get()
   console.log(data, status)
 
   return (
