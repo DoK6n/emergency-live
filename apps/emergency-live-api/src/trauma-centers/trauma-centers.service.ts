@@ -12,31 +12,31 @@ export class TraumaCentersService {
   }
 
   async getTraumaCenterListInfoInquire(): Promise<OpenDataResponseDto<TraumaCenterSummaryInfo[]>> {
-    const traumaCenterList = OpenDataResponseDto.from<TraumaCenterSummaryInfo[]>(
+    const result = OpenDataResponseDto.from<TraumaCenterSummaryInfo[]>(
       OpenDataResponseDto.extractItem(traumaCenterListInfo),
       OpenDataResponseDto.pagination(traumaCenterListInfo),
     )
 
-    return traumaCenterList
+    return result
   }
 
   async getTraumaCenterLocationInfoInquire(): Promise<
     OpenDataResponseDto<TraumaCenterLocationInfo>
   > {
-    const traumaCenterLocation = OpenDataResponseDto.from<TraumaCenterLocationInfo>(
+    const result = OpenDataResponseDto.from<TraumaCenterLocationInfo>(
       OpenDataResponseDto.extractItem(traumaCenterLocationInfo),
       OpenDataResponseDto.pagination(traumaCenterLocationInfo),
     )
 
-    return traumaCenterLocation
+    return result
   }
 
   async getTraumaCenterBasicInfoInquire(): Promise<OpenDataResponseDto<TraumaCenterInfo>> {
-    const traumaCenter = OpenDataResponseDto.from<TraumaCenterInfo>(
+    const result = OpenDataResponseDto.from<TraumaCenterInfo>(
       OpenDataResponseDto.extractItem(traumaCenterInfo),
       OpenDataResponseDto.pagination(traumaCenterInfo),
     )
 
-    return traumaCenter
+    return result
   }
 }
