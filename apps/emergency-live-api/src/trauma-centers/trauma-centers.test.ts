@@ -6,8 +6,13 @@ import { traumaCenterInfo, traumaCenterListInfo, traumaCenterLocationInfo } from
 import { OpenDataResponseDto } from '../common/dto'
 
 describe('trauma-centers', async () => {
-  const mockApp = new Elysia({ serve: { hostname: 'localhost' } }).use(TraumaCentersController)
-  const api = edenTreaty<typeof mockApp>(`http://localhost:${process.env.PORT}`)
+  const port = 8001
+  const mockApp = new Elysia({ serve: { hostname: 'localhost', port } }).use(
+    TraumaCentersController,
+  )
+  .listen(port)
+
+  const api = edenTreaty<typeof mockApp>(`http://localhost:${port}`)
 
   describe('외상센터', async () => {
     it('외상센터 목록정보 조회 테스트', async () => {

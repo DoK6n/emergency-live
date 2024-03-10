@@ -17,7 +17,7 @@ export const EmergencyInfoController = new Elysia({
       .get(
         '/available-beds',
         ({ emergencyInfoService }) => {
-          return emergencyInfoService.getData()
+          return emergencyInfoService.getEmergencyRoomRealtimeUsefulStockbedInformationInquire()
         },
         {
           detail: {
