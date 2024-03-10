@@ -22,20 +22,22 @@ export const TraumaCentersController = new Elysia({
         {
           detail: {
             summary: '외상센터 목록정보 조회',
-            description: '외상센터 목록정보를 조회합니다.',
+            description:
+              '주소, 진료요일, 진료과목 등을 기준으로 응급의료기관 목록정보 조회 기능제공',
           },
         },
       )
 
       .get(
         '/locations',
-        ({ traumaCentersService }) => {
-          return 'getTraumaCenterLocationInfoInquire'
+        async ({ traumaCentersService }) => {
+          return await traumaCentersService.getTraumaCenterLocationInfoInquire()
         },
         {
           detail: {
             summary: '외상센터 위치정보 조회',
-            description: '외상센터 위치정보를 조회합니다.',
+            description:
+              '위/경도를 기준으로 응급의료기관 위치 정보등을 조회하는 응급의료기관 위치정보 조회 기능제공',
           },
         },
       )
@@ -48,7 +50,8 @@ export const TraumaCentersController = new Elysia({
         {
           detail: {
             summary: '외상센터 기본정보 조회',
-            description: '외상센터 기본정보를 조회합니다.',
+            description:
+              '기관ID를 기준으로 진료요일, 응급실 정보 등을 조회하는 응급의료기관 기본정보 조회 기능제공',
           },
         },
       ),

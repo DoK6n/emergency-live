@@ -2,7 +2,7 @@ import { describe, expect, it } from 'bun:test'
 import { edenTreaty } from '@elysiajs/eden'
 import { TraumaCentersController } from './trauma-centers.controller'
 import { Elysia } from 'elysia'
-import { traumaCenterInfo, traumaCenterListInfo } from './sample-data'
+import { traumaCenterInfo, traumaCenterListInfo, traumaCenterLocationInfo } from './sample-data'
 import { OpenDataResponseDto } from '../common/dto'
 
 describe('trauma-centers', async () => {
@@ -26,6 +26,16 @@ describe('trauma-centers', async () => {
         OpenDataResponseDto.from(
           OpenDataResponseDto.extractItem(traumaCenterInfo),
           OpenDataResponseDto.pagination(traumaCenterInfo),
+        ),
+      )
+    })
+
+    it('외상센터 위치정보 조회 테스트', async () => {
+      const response = await api['trauma-centers'].locations.get()
+      expect(response.data).toEqual(
+        OpenDataResponseDto.from(
+          OpenDataResponseDto.extractItem(traumaCenterLocationInfo),
+          OpenDataResponseDto.pagination(traumaCenterLocationInfo),
         ),
       )
     })

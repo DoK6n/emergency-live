@@ -1,7 +1,7 @@
 import { Elysia } from 'elysia'
-import { traumaCenterInfo, traumaCenterListInfo } from './sample-data'
+import { traumaCenterInfo, traumaCenterListInfo, traumaCenterLocationInfo } from './sample-data'
 import { OpenDataResponseDto } from '../common/dto'
-import { TraumaCenterInfo, TraumaCenterSummaryInfo } from './model'
+import { TraumaCenterInfo, TraumaCenterLocationInfo, TraumaCenterSummaryInfo } from './model'
 
 export class TraumaCentersService {
   static use() {
@@ -18,6 +18,17 @@ export class TraumaCentersService {
     )
 
     return traumaCenterList
+  }
+
+  async getTraumaCenterLocationInfoInquire(): Promise<
+    OpenDataResponseDto<TraumaCenterLocationInfo>
+  > {
+    const traumaCenterLocation = OpenDataResponseDto.from<TraumaCenterLocationInfo>(
+      OpenDataResponseDto.extractItem(traumaCenterLocationInfo),
+      OpenDataResponseDto.pagination(traumaCenterLocationInfo),
+    )
+
+    return traumaCenterLocation
   }
 
   async getTraumaCenterBasicInfoInquire(): Promise<OpenDataResponseDto<TraumaCenterInfo>> {
