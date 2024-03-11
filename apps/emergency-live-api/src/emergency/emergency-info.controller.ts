@@ -16,8 +16,8 @@ export const EmergencyInfoController = new Elysia({
 
       .get(
         '/available-beds',
-        ({ emergencyInfoService }) => {
-          return emergencyInfoService.getEmergencyRoomRealtimeUsefulStockbedInformationInquire()
+        async ({ emergencyInfoService }) => {
+          return await emergencyInfoService.getEmergencyRoomRealtimeUsefulStockbedInformationInquire()
         },
         {
           detail: {
@@ -29,8 +29,8 @@ export const EmergencyInfoController = new Elysia({
 
       .get(
         '/severe-disease-acceptance',
-        ({ emergencyInfoService }) => {
-          return 'getSevereIllnessDiseaseAcceptancePossibleInfoInquire'
+        async ({ emergencyInfoService }) => {
+          return await emergencyInfoService.getSevereIllnessDiseaseAcceptancePossibleInfoInquire()
         },
         {
           detail: {
