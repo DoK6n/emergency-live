@@ -4,11 +4,13 @@ import { Elysia } from 'elysia'
 import { OpenDataResponseDto } from '../common/dto'
 import {
   EmergencyRoomRealtimeUsefulStockbedInfo,
+  EmergencyTreatmentListInfo,
   SevereIllnessDiseaseAcceptancePossibleInfo,
 } from './model'
 import { EmergencyInfoController } from './emergency-info.controller'
 import {
   emergencyRoomRealTimeUsefulStockbedInfoList,
+  emergencyTreatmentListInfoList,
   severeIllnessDiseaseAcceptancePossibleInfoList,
 } from './sample-data'
 
@@ -38,6 +40,16 @@ describe('emergency-info', async () => {
         OpenDataResponseDto.from<SevereIllnessDiseaseAcceptancePossibleInfo[]>(
           OpenDataResponseDto.extractItem(severeIllnessDiseaseAcceptancePossibleInfoList),
           OpenDataResponseDto.pagination(severeIllnessDiseaseAcceptancePossibleInfoList),
+        ),
+      )
+    })
+
+    it('응급의료기관 목록정보 조회 테스트', async () => {
+      const response = await api['emergency-info']['emergency-medical-institutions'].get()
+      expect(response.data).toEqual(
+        OpenDataResponseDto.from<EmergencyTreatmentListInfo[]>(
+          OpenDataResponseDto.extractItem(emergencyTreatmentListInfoList),
+          OpenDataResponseDto.pagination(emergencyTreatmentListInfoList),
         ),
       )
     })

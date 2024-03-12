@@ -102,6 +102,43 @@ export type SevereIllnessDiseaseAcceptancePossibleInfo = {
   MKioskTy25: string
   MKioskTy26: string
   MKioskTy27: string
-  MKioskTy28: string
   MKioskTy27Msg?: string
+  MKioskTy28: string
+}
+
+export type EmergencyTreatmentListInfo = {
+  dutyName: string
+  MKioskTy1: string
+  MKioskTy2: string
+  MKioskTy3: string
+  MKioskTy4: string
+  MKioskTy5: string
+  MKioskTy6: string
+  MKioskTy7: string
+  MKioskTy8: string
+  MKioskTy9: string
+  MKioskTy10: string
+  MKioskTy10Msg?: string
+  MKioskTy11: string
+  MKioskTy12: string
+  MKioskTy12Msg?: string
+  MKioskTy13: string
+  MKioskTy14: string
+  MKioskTy14Msg?: string
+  MKioskTy15: string
+  MKioskTy15Msg?: string
+  MKioskTy16: string
+  MKioskTy17: string
+  MKioskTy18: string
+  MKioskTy19: string
+  MKioskTy20: string
+  MKioskTy21: string
+  MKioskTy22: string
+  MKioskTy23: string
+  MKioskTy24: string
+  MKioskTy25: string
+  MKioskTy26: string
+  MKioskTy27: string
+  MKioskTy27Msg?: string
+  MKioskTy28: string
 }
