@@ -3,11 +3,13 @@ import { OpenDataResponseDto } from '../common/dto'
 import {
   EmergencyRoomRealtimeUsefulStockbedInfo,
   EmergencyTreatmentListInfo,
+  EmergencyTreatmentLocationInfo,
   SevereIllnessDiseaseAcceptancePossibleInfo,
 } from './model'
 import {
   emergencyRoomRealTimeUsefulStockbedInfoList,
   emergencyTreatmentListInfoList,
+  emergencyTreatmentLocationInfoData,
   severeIllnessDiseaseAcceptancePossibleInfoList,
 } from './sample-data'
 
@@ -47,6 +49,17 @@ export class EmergencyInfoService {
     const result = OpenDataResponseDto.from<EmergencyTreatmentListInfo[]>(
       OpenDataResponseDto.extractItem(emergencyTreatmentListInfoList),
       OpenDataResponseDto.pagination(emergencyTreatmentListInfoList),
+    )
+
+    return result
+  }
+
+  async getEmergencyTreatmentLocationInfoInquire(): Promise<
+    OpenDataResponseDto<EmergencyTreatmentLocationInfo>
+  > {
+    const result = OpenDataResponseDto.from<EmergencyTreatmentLocationInfo>(
+      OpenDataResponseDto.extractItem(emergencyTreatmentLocationInfoData),
+      OpenDataResponseDto.pagination(emergencyTreatmentLocationInfoData),
     )
 
     return result

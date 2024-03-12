@@ -318,3 +318,34 @@ export const emergencyTreatmentListInfoList = {
     },
   },
 }
+
+export const emergencyTreatmentLocationInfoData = {
+  response: {
+    header: {
+      resultCode: 0,
+      resultMsg: 'NORMAL SERVICE.',
+    },
+    body: {
+      items: {
+        item: {
+          cnt: 74,
+          distance: 17.53,
+          dutyAddr: '경기도 고양시 덕양구 화수로14번길 55 (화정동)',
+          dutyDiv: 'A',
+          dutyDivName: '종합병원',
+          dutyName: '의료법인명지의료재단명지병원',
+          dutyTel1: '031-810-5114',
+          endTime: 2400,
+          hpid: 'A2100042',
+          latitude: 37.64207169115689,
+          longitude: 126.83145733035825,
+          rnum: 1,
+          startTime: 0,
+        },
+      },
+      numOfRows: 1,
+      pageNo: 1,
+      totalCount: 1,
+    },
+  },
+}

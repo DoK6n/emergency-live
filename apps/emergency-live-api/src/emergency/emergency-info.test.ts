@@ -5,12 +5,14 @@ import { OpenDataResponseDto } from '../common/dto'
 import {
   EmergencyRoomRealtimeUsefulStockbedInfo,
   EmergencyTreatmentListInfo,
+  EmergencyTreatmentLocationInfo,
   SevereIllnessDiseaseAcceptancePossibleInfo,
 } from './model'
 import { EmergencyInfoController } from './emergency-info.controller'
 import {
   emergencyRoomRealTimeUsefulStockbedInfoList,
   emergencyTreatmentListInfoList,
+  emergencyTreatmentLocationInfoData,
   severeIllnessDiseaseAcceptancePossibleInfoList,
 } from './sample-data'
 
@@ -50,6 +52,16 @@ describe('emergency-info', async () => {
         OpenDataResponseDto.from<EmergencyTreatmentListInfo[]>(
           OpenDataResponseDto.extractItem(emergencyTreatmentListInfoList),
           OpenDataResponseDto.pagination(emergencyTreatmentListInfoList),
+        ),
+      )
+    })
+
+    it('응급의료기관 위치정보 조회 테스트', async () => {
+      const response = await api['emergency-info']['emergency-medical-institutions'].locations.get()
+      expect(response.data).toEqual(
+        OpenDataResponseDto.from<EmergencyTreatmentLocationInfo>(
+          OpenDataResponseDto.extractItem(emergencyTreatmentLocationInfoData),
+          OpenDataResponseDto.pagination(emergencyTreatmentLocationInfoData),
         ),
       )
     })

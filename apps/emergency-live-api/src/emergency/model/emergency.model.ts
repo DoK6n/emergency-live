@@ -142,3 +142,19 @@ export type EmergencyTreatmentListInfo = {
   MKioskTy27Msg?: string
   MKioskTy28: string
 }
+
+export type EmergencyTreatmentLocationInfo = {
+  cnt: number
+  distance: number
+  dutyAddr: string
+  dutyDiv: string
+  dutyDivName: string
+  dutyName: string
+  dutyTel1: string
+  endTime: number
+  hpid: string
+  latitude: number
+  longitude: number
+  rnum: number
+  startTime: number
+}
