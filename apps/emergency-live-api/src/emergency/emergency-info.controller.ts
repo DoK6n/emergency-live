@@ -68,8 +68,8 @@ export const EmergencyInfoController = new Elysia({
 
       .get(
         '/emergency-medical-institutions/basic-info',
-        ({ emergencyInfoService }) => {
-          return 'getEmergencyTreatmentBasicInfoInquire'
+        async ({ emergencyInfoService }) => {
+          return await emergencyInfoService.getEmergencyTreatmentBasicInfoInquire()
         },
         {
           detail: {

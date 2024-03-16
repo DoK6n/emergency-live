@@ -4,6 +4,7 @@ import { Elysia } from 'elysia'
 import { OpenDataResponseDto } from '../common/dto'
 import {
   EmergencyRoomRealtimeUsefulStockbedInfo,
+  EmergencyTreatmentBasicInfo,
   EmergencyTreatmentListInfo,
   EmergencyTreatmentLocationInfo,
   SevereIllnessDiseaseAcceptancePossibleInfo,
@@ -11,6 +12,7 @@ import {
 import { EmergencyInfoController } from './emergency-info.controller'
 import {
   emergencyRoomRealTimeUsefulStockbedInfoList,
+  emergencyTreatmentBasicInfoData,
   emergencyTreatmentListInfoList,
   emergencyTreatmentLocationInfoData,
   severeIllnessDiseaseAcceptancePossibleInfoList,
@@ -62,6 +64,17 @@ describe('emergency-info', async () => {
         OpenDataResponseDto.from<EmergencyTreatmentLocationInfo>(
           OpenDataResponseDto.extractItem(emergencyTreatmentLocationInfoData),
           OpenDataResponseDto.pagination(emergencyTreatmentLocationInfoData),
+        ),
+      )
+    })
+
+    it('응급의료기관 기본정보 조회 테스트', async () => {
+      const response =
+        await api['emergency-info']['emergency-medical-institutions']['basic-info'].get()
+      expect(response.data).toEqual(
+        OpenDataResponseDto.from<EmergencyTreatmentBasicInfo>(
+          OpenDataResponseDto.extractItem(emergencyTreatmentBasicInfoData),
+          OpenDataResponseDto.pagination(emergencyTreatmentBasicInfoData),
         ),
       )
     })

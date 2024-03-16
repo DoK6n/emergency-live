@@ -2,12 +2,14 @@ import { Elysia } from 'elysia'
 import { OpenDataResponseDto } from '../common/dto'
 import {
   EmergencyRoomRealtimeUsefulStockbedInfo,
+  EmergencyTreatmentBasicInfo,
   EmergencyTreatmentListInfo,
   EmergencyTreatmentLocationInfo,
   SevereIllnessDiseaseAcceptancePossibleInfo,
 } from './model'
 import {
   emergencyRoomRealTimeUsefulStockbedInfoList,
+  emergencyTreatmentBasicInfoData,
   emergencyTreatmentListInfoList,
   emergencyTreatmentLocationInfoData,
   severeIllnessDiseaseAcceptancePossibleInfoList,
@@ -62,6 +64,14 @@ export class EmergencyInfoService {
       OpenDataResponseDto.pagination(emergencyTreatmentLocationInfoData),
     )
 
+    return result
+  }
+
+  async getEmergencyTreatmentBasicInfoInquire(): Promise<OpenDataResponseDto<EmergencyTreatmentBasicInfo>> {
+    const result = OpenDataResponseDto.from<EmergencyTreatmentBasicInfo>(
+      OpenDataResponseDto.extractItem(emergencyTreatmentBasicInfoData),
+      OpenDataResponseDto.pagination(emergencyTreatmentBasicInfoData)
+    )
     return result
   }
 }
